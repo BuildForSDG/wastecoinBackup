@@ -1,6 +1,6 @@
 A one-liner phrase describing this project or app
 
-[![Codacy Badge](https://img.shields.io/badge/Code%20Quality-D-red)](https://img.shields.io/badge/Code%20Quality-D-red)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/caca40b552254fc793293ab5ea90349b)](https://www.codacy.com/gh/BuildForSDG/wastecoinBackup?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=BuildForSDG/wastecoinBackup&amp;utm_campaign=Badge_Grade)
 
 
 ## About

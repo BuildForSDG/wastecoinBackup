@@ -1,0 +1,154 @@
+{% extends "layout.html" %}
+{% block body%}
+{% load static %}
+<div class="login-card">
+  <div class="reg-header text-center"> 
+    <a href="{% url 'home' %}" style="color: #fff;">
+      <img src="{% static 'left_chevron.svg' %}" class="back-button mobile-logo float-left" alt="logo" />
+    </a>
+    Register</div>
+  <div class="mobile-logo-div" style="margin:auto; width:50%;"><img src="{% static 'waste_coin_logo.svg' %}" class="logo mobile-logo" alt="logo" /></div>
+  {% if error == "0" %}
+    <div class='text-center alert alert-info' id="message_div">{{message}}.</div>
+  {% else %}
+    <div class='text-center text-danger' id="message_div">{{message}}</div>
+  {% endif %}
+  <form class="form-control reg-form" action="{% url 'registerapi' %}" method="POST">
+    {% csrf_token %}
+  <div class="row">
+      <div class="col-md-6">
+         <div class="form-group text-left">
+            <input type="text" 
+                class="form-control-login" 
+                name="firstname" 
+                placeholder="First Name"
+            />
+          </div>
+
+          <div class="form-group text-left">
+            <input type="text" 
+                class="form-control-login" 
+                name="lastname" 
+                placeholder="Last Name"
+            />
+          </div>
+
+          <div class="form-group text-left">
+            <input type="phone" 
+                class="form-control-login" 
+                name="phonenumber" 
+                placeholder="Phone Number"
+            />
+          </div>
+
+          <div class="form-group text-left">
+            <input type="email" 
+                class="form-control-login" 
+                name="email" 
+                placeholder="Email"
+            />
+          </div>
+          <div class="form-group text-left">
+            <select id="gender" name= "gender" class="form-control-login" >
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+          
+      </div>
+
+      <div class="col-md-6 next-mobile">
+        <div class="form-group text-left">
+          <input type="password" 
+              class="form-control-login" 
+              name="password" 
+              placeholder="Password"
+          />
+        </div>
+        <div class="form-group text-left">
+          <input type="password" 
+              class="form-control-login" 
+              name="confirmPassword" 
+              placeholder=" Confirm Password"
+          />
+        </div>
+          
+
+          <div class="form-group text-left">
+            <input type="text" 
+                class="form-control-login" 
+                name="address" 
+                placeholder="Street Address"
+            />
+          </div>
+
+          <div class="form-group text-left">
+            <input type="text" 
+                class="form-control-login" 
+                name="lga" 
+                placeholder="L.G.A"
+            />
+          </div>
+
+          <div class="form-group text-left">
+            <select id="state" name= "state" class="form-control-login">
+              <option  selected value="Lagos">Lagos</option>
+              <option value="Abia">Abia</option>
+              <option value="Adamawa">Adamawa</option>
+              <option value="Akwa Ibom">Akwa Ibom</option>
+              <option value="Anambra">Anambra</option>
+              <option value="Bauchi">Bauchi</option>
+              <option value="Bayelsa">Bayelsa</option>
+              <option value="Benue">Benue</option>
+              <option value="Borno">Borno</option>
+              <option value="Cross Rive">Cross River</option>
+              <option value="Delta">Delta</option>
+              <option value="Ebonyi">Ebonyi</option>
+              <option value="Edo">Edo</option>
+              <option value="Ekiti">Ekiti</option>
+              <option value="Enugu">Enugu</option>
+              <option value="FCT">Federal Capital Territory</option>
+              <option value="Gombe">Gombe</option>
+              <option value="Imo">Imo</option>
+              <option value="Jigawa">Jigawa</option>
+              <option value="Kaduna">Kaduna</option>
+              <option value="Kano">Kano</option>
+              <option value="Katsina">Katsina</option>
+              <option value="Kebbi">Kebbi</option>
+              <option value="Kogi">Kogi</option>
+              <option value="Kwara">Kwara</option>
+              <option value="Lagos">Lagos</option>
+              <option value="Nasarawa">Nasarawa</option>
+              <option value="Niger">Niger</option>
+              <option value="Ogun">Ogun</option>
+              <option value="Ondo">Ondo</option>
+              <option value="Osun">Osun</option>
+              <option value="Oyo">Oyo</option>
+              <option value="Plateau">Plateau</option>
+              <option value="Rivers">Rivers</option>
+              <option value="Sokoto">Sokoto</option>
+              <option value="Taraba">Taraba</option>
+              <option value="Yobe">Yobe</option>
+              <option value="Zamfara">Zamfara</option>
+            </select>
+          </div>
+          </div>
+      </div>
+      
+      <div class="col-md-12 submit-reg-div">
+        <div class="form-group text-left">
+          <select id="country" name= "country" class="form-control-login" >
+            <option value="Nigeria">Nigeria</option>
+            <option value="Other">Other</option>
+          </select>
+      </div>
+    </div>
+    </div>
+    
+    <div class="col-md-12 submit-reg-div">
+     <button type="submit" class="reg-submit" >Create Account</button>
+        <a href="{% url 'login' %}"><p>Have an account already? Sign in </p></a>
+    </div>
+  </form>
+</div>
+{% endblock %}
